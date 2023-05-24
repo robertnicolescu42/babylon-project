@@ -105,23 +105,23 @@
         // sphere.position.y = 1;
 
         // Our built-in 'ground' shape.
-        var ground = BABYLON.MeshBuilder.CreateGround(
-          "ground",
-          { width: 5, height: 5 },
-          scene
-        );
+        // var ground = BABYLON.MeshBuilder.CreateGround(
+        //   "ground",
+        //   { width: 5, height: 5 },
+        //   scene
+        // );
 
-        let groundMaterial = new BABYLON.StandardMaterial(
-          "Ground Material",
-          scene
-        );
-        ground.material = groundMaterial;
+        // let groundMaterial = new BABYLON.StandardMaterial(
+        //   "Ground Material",
+        //   scene
+        // );
+        // ground.material = groundMaterial;
 
-        let groundTexture = new BABYLON.Texture(
-          "textures/musatesti_photo.jpg",
-          scene
-        );
-        ground.material.diffuseTexture = groundTexture;
+        // let groundTexture = new BABYLON.Texture(
+        //   "textures/musatesti_photo.jpg",
+        //   scene
+        // );
+        // ground.material.diffuseTexture = groundTexture;
 
         // BABYLON.SceneLoader.ImportMesh(
         //   "",
@@ -138,7 +138,7 @@
           BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
 
         var textBlock = new BABYLON.GUI.TextBlock();
-        textBlock.text = "AS MUȘĂTEȘTI \n Ionuț Pătrașcu BEST MANAGER 2023";
+        textBlock.text = "skrille";
         textBlock.fontSize = 48;
         textBlock.color = "white";
         textBlock.fontFamily = "Arial";
@@ -147,6 +147,30 @@
         textBlock.textVerticalAlignment =
           BABYLON.GUI.Control.VERTICAL_ALIGNMENT_CENTER;
         advancedTexture.addControl(textBlock);
+
+        // var sphere = BABYLON.MeshBuilder.CreateSphere(
+        //   "sphere",
+        //   { diameterX: -5, diameterY: -2.75, diameterZ: -2.25 },
+        //   scene
+        // );
+
+        sphere = BABYLON.MeshBuilder.CreateSphere(
+          "sphere",
+          { diameter: -2, segments: 32 },
+          scene
+        );
+
+        var sphereMaterial = new BABYLON.StandardMaterial(
+          "sphereMaterial",
+          scene
+        );
+
+        var sphereTexture = new BABYLON.Texture("textures/skrillex-jm4dxh.jpg", scene);
+        sphereMaterial.diffuseTexture = sphereTexture;
+
+        sphere.material = sphereMaterial;
+        sphere.position.y = 1 / 2;
+
 
         return scene;
       };
